@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.router = void 0;
+const express_1 = require("express");
+const controllers_1 = require("./controllers");
+const router = (0, express_1.Router)();
+exports.router = router;
+router.post('/phone', new controllers_1.CreatePhoneController().handle);
+router.get('/phone', new controllers_1.FindAllPhoneController().handle);
+router.get('/phone/:productId', new controllers_1.FindPhoneByIdController().handle);
+router.delete('/phone/:productId', new controllers_1.DeletePhoneController().handle);
+router.put('/phone/:productId', new controllers_1.UpdatePhoneController().handle);
